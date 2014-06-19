@@ -1,0 +1,52 @@
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/projeto-final-mean');
+
+var db = mongoose.connection;
+db.on('error', function(err){
+  console.log('Erro de conexao.', err);
+});
+db.once('open', function () {
+  console.log('Conexão aberta.');
+});
+
+var Schema = mongoose.Schema;
+
+var ShopSchema = new Schema({
+  name: { 
+    type: String, 
+    default: ''
+  },
+  address: {
+    logradouro:{
+      type: String, 
+      default: ''
+    },
+    numero:{
+      type: Number, 
+      min: 0
+    },
+    complemento:{
+      type: String, 
+      default: ''
+    },
+    bairro:{
+      type: String, 
+      default: ''
+    },
+    cidade:{
+      type: String, 
+      default: ''
+    },
+    estado:{
+      type: String, 
+      default: ''
+    },
+    pais:{
+      type: String, 
+      default: ''
+    },
+  },
+  created: { type: Date, default: Date.now }
+});
+
+module.exports = mongoose.model('Shop', ShopSchema);

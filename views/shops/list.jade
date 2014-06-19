@@ -1,0 +1,18 @@
+h3
+  | {{ workshop }}
+h4 Listagem das Lojas
+table.container-small
+  thead
+    tr
+      th 
+        a.order(data-ng-click='orderBy(\'name\')') Nome
+      th
+        a.order(data-ng-click='orderBy(\'category\')') Bairro
+  tbody
+    tr(data-ng-repeat='loja in lojas | orderBy:predicate:reverse')
+      td 
+        a(data-ng-href='/shops/{{loja._id}}')
+          {{ loja.name }}
+      td 
+        a(data-ng-href='/shops/{{loja._id}}')
+          {{ loja.address.bairro }}

@@ -1,0 +1,23 @@
+h3
+  | {{ workshop }}
+
+ul
+  h4 {{ cerveja.name }}
+  li
+    | Name: {{ cerveja.name }}
+  li
+    | Category: {{ cerveja.category }}
+  li
+    | Alcohol: {{ cerveja.alcohol }}
+  li
+    | Price: {{ cerveja.price }}
+  li
+    | Description: {{ cerveja.description }}
+
+
+p
+  a(data-ng-href='beers/{{cerveja._id}}/edit')
+    | Alterar
+p 
+  a(data-ng-href='beers/{{cerveja._id}}/remove')
+    | Excluir

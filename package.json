@@ -1,0 +1,14 @@
+{
+  "name": "projeto-final-be-mean",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "body-parser": "*",
+    "errorhandler": "*",
+    "express": "*",
+    "jade": "*",
+    "method-override": "*",
+    "morgan": "*",
+    "mongoose": "^3.8.12"
+  }
+}

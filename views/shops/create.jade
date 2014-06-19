@@ -1,0 +1,15 @@
+h3 {{ workshop }}
+
+h4 {{ msg }}
+
+form.container-small
+  label
+    | Name:
+    input(type='text', name='shop.name', 
+          data-ng-model='shop.name')
+  label
+    | Bairro:
+    input(type='text', name='shop.address.bairro', 
+          data-ng-model='shop.address.bairro')
+  button(data-ng-click='create(shop)')
+    | Criar
