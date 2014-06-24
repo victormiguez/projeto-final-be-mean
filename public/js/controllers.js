@@ -243,4 +243,23 @@ angular.module('myApp.controllers', []).
       });
     }
 
+  }]).
+  controller('ShopsShowCtrl', ['$scope', '$http', '$routeParams', 
+    function ($scope, $http, $routeParams) {
+    $scope.workshop = 'Workshop Be MEAN';
+
+    // Precisamos buscar nosssa cerveja na nossa API
+    var id = $routeParams.id;
+    var url = '/api/shops/'+id;
+
+    $http.get(url)
+    .success(function(data){
+      $scope.loja = data;
+      console.log('Cerveja', $scope.loja);
+    })
+    .error(function(err){
+      console.log('Error: ', err);
+      $scope.msg = 'Error:  ' + err;
+    });
+
   }]);

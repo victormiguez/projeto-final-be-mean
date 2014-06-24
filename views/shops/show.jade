@@ -2,22 +2,27 @@ h3
   | {{ workshop }}
 
 ul
-  h4 {{ cerveja.name }}
+  h4 {{ loja.name }}
   li
-    | Name: {{ cerveja.name }}
+    | Nome: {{ loja.name }}
   li
-    | Category: {{ cerveja.category }}
+    | Logradouro: {{ loja.address.logradouro }}
   li
-    | Alcohol: {{ cerveja.alcohol }}
+    | Número: {{ loja.address.numero }}
   li
-    | Price: {{ cerveja.price }}
+    | Complemento: {{ loja.address.complemento }}
   li
-    | Description: {{ cerveja.description }}
-
+    | Bairro: {{ loja.address.bairro }}
+  li
+    | Cidade: {{ loja.address.cidade }}
+  li
+    | Estado: {{ loja.address.estado }}
+  li
+    | País: {{ loja.address.pais }}
 
 p
-  a(data-ng-href='beers/{{cerveja._id}}/edit')
+  a(data-ng-href='beers/{{loja._id}}/edit')
     | Alterar
 p 
-  a(data-ng-href='beers/{{cerveja._id}}/remove')
+  a(data-ng-href='beers/{{loja._id}}/remove')
     | Excluir

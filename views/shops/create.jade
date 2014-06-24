@@ -5,11 +5,35 @@ h4 {{ msg }}
 form.container-small
   label
     | Name:
-    input(type='text', name='shop.name', 
-          data-ng-model='shop.name')
+    input(type='text', name='loja.name', 
+          data-ng-model='loja.name')
+  label
+    | Logradouro:
+    input(type='text', name='loja.address.logradouro', 
+          data-ng-model='loja.address.logradouro')
+  label
+    | Número:
+    input(type='text', name='loja.address.numero', 
+          data-ng-model='loja.address.numero')
+  label
+    | Complemento:
+    input(type='text', name='loja.address.complemento', 
+          data-ng-model='loja.address.complemento')
   label
     | Bairro:
-    input(type='text', name='shop.address.bairro', 
-          data-ng-model='shop.address.bairro')
-  button(data-ng-click='create(shop)')
+    input(type='text', name='loja.address.bairro', 
+          data-ng-model='loja.address.bairro')
+  label
+    | Cidade:
+    input(type='text', name='loja.address.cidade', 
+          data-ng-model='loja.address.cidade')
+  label
+    | Estado:
+    input(type='text', name='loja.address.estado', 
+          data-ng-model='loja.address.estado')
+  label
+    | País:
+    input(type='text', name='loja.address.pais', 
+          data-ng-model='loja.address.pais')
+  button(data-ng-click='create(loja)')
     | Criar
