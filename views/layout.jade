@@ -27,14 +27,20 @@ html(ng-app="myApp")
       div(class='wrapper')
         img(src='img/logo.png', width='100', alt='')
         
+        a(class='button-login-user')
+          | Criar Conta
         button(class='button-login-user')
           | Minha Conta
         div(class='user-login-form-wrapper')
           form
-            input(type='text')
+            label E-mail
+            input(type='email')
+            label Senha
             input(type='password')
             button(type='submit')
               | Enviar
+          a(href='')
+            | Criar uma conta
 
 
     block content

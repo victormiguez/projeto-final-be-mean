@@ -9,6 +9,7 @@ ul{
 
 .wrapper{
   margin: 0 auto;
+  position: relative;
   width: 960px;
 }
 
@@ -40,4 +41,18 @@ ul{
 .content{
   float: left;
   width: 710px;
+}
+
+.user-login-form-wrapper{
+  background: cyan;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  z-index: 9999;
+}
+.user-login-form-wrapper label{
+  display: block;
+}
+.user-login-form-wrapper button{
+  display: block;
 }
