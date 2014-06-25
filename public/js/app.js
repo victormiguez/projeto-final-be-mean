@@ -10,15 +10,6 @@ angular.module('myApp', [
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/view1', {
-      templateUrl: 'partials/partial1',
-      controller: 'MyCtrl1'
-    }).
-    when('/view2', {
-      templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
-    }).
-    // criando a rota de listagem das cervejas
     when('/beers', {
       templateUrl: 'expose/beers/list',
       controller: 'IndexCtrl'
@@ -43,16 +34,24 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'expose/shops/list',
       controller: 'ShopsIndexCtrl'
     }).
-    when('/shops/:id', {
-      templateUrl: 'expose/shops/show',
-      controller: 'ShopsShowCtrl'
-    }).
     when('/shops/create', {
       templateUrl: 'expose/shops/create',
       controller: 'ShopsCreateCtrl'
     }).
+    when('/shops/:_id', {
+      templateUrl: 'expose/shops/show',
+      controller: 'ShopsShowCtrl'
+    }).
+    when('/shops/:_id/edit', {
+      templateUrl: 'expose/shops/edit',
+      controller: 'ShopsEditCtrl'
+    }).
+    when('/shops/:id/remove', {
+      templateUrl: 'expose/shops/remove',
+      controller: 'ShopsRemoveCtrl'
+    }).
     otherwise({
-      redirectTo: '/view1'
+      redirectTo: '/'
     });
 
   $locationProvider.html5Mode(true);

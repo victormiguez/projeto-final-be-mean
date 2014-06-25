@@ -15,7 +15,6 @@ angular.module('myApp.controllers', []).
     error(function (data, status, headers, config) {
       $scope.name = 'Error!';
     });
-
   }).
   
   controller('IndexCtrl', ['$scope', '$http', function ($scope, $http) {
@@ -244,12 +243,12 @@ angular.module('myApp.controllers', []).
     }
 
   }]).
-  controller('ShopsShowCtrl', ['$scope', '$http', '$routeParams', 
-    function ($scope, $http, $routeParams) {
+  controller('ShopsShowCtrl', ['$scope', '$http', '$routeParams', '$location', 
+    function ($scope, $http, $routeParams, $location) {
     $scope.workshop = 'Workshop Be MEAN';
 
     // Precisamos buscar nosssa cerveja na nossa API
-    var id = $routeParams.id;
+    var id = $routeParams._id;
     var url = '/api/shops/'+id;
 
     $http.get(url)
@@ -262,4 +261,66 @@ angular.module('myApp.controllers', []).
       $scope.msg = 'Error:  ' + err;
     });
 
+    // Função de deletar
+    $scope.remove = function(loja){    
+      var method = 'DELETE';
+      var query = {
+        _id: loja._id
+      };
+
+      var http_settings = {
+        method: method,
+        url: url,
+        data: query
+      };
+      console.log('alterando', http_settings);
+      $http(http_settings)
+      .success(function(data){
+        $location.path('/shops');
+      })
+      .error(function(err){
+        console.log('Error: ', err);
+        $scope.msg = 'Error:  ' + err;
+      });
+    }
+
+  }]).
+  controller('ShopsEditCtrl', ['$scope', '$http', '$routeParams', 
+    function ($scope, $http, $routeParams) {
+    $scope.workshop = 'Workshop Be MEAN';
+
+    var id = $routeParams._id;
+    var url = '/api/shops/'+id;
+    var method = 'GET';
+    $http({
+      method: method,
+      url: url
+    })
+    .success(function(data){
+      $scope.msg = 'Loja ' + data.name;
+      $scope.loja = data;
+    })
+    .error(function(err){
+      console.log('Error: ', err);
+      $scope.msg = 'Error:  ' + err;
+    });
+
+    // Função de alterar
+    $scope.update = function(loja){    
+      var method = 'PUT';
+      var http_settings = {
+        method: method,
+        url: url,
+        data: loja
+      };
+      console.log('alterando', http_settings);
+      $http(http_settings)
+      .success(function(data){
+        $scope.msg = 'Loja ' + loja.name + ' alterada com SUCESSO';
+      })
+      .error(function(err){
+        console.log('Error: ', err);
+        $scope.msg = 'Error:  ' + err;
+      });
+    }
   }]);

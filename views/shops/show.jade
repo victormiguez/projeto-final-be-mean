@@ -1,6 +1,5 @@
 h3
   | {{ workshop }}
-
 ul
   h4 {{ loja.name }}
   li
@@ -21,8 +20,8 @@ ul
     | País: {{ loja.address.pais }}
 
 p
-  a(data-ng-href='beers/{{loja._id}}/edit')
+  a(data-ng-href='shops/{{loja._id}}/edit')
     | Alterar
 p 
-  a(data-ng-href='beers/{{loja._id}}/remove')
+  button(data-ng-click='remove(loja)')
     | Excluir

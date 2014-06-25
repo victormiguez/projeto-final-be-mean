@@ -1,24 +1,41 @@
 extends layout
 
-block body
-  div(ng-controller='AppCtrl')
-    h2 Hello {{name}}
-    ul.menu
-      li
-        |Lojas 
-      li
-        a(href='shops') List 
-      li
-        a(href='shops/create') Create
-    ul.menu
-      li
-        |Cervejas 
-      li
-        a(href='beers') List 
-      li
-        a(href='beers/create') Create
+block content
+  section(ng-controller='AppCtrl')
+    div(class='wrapper')
+      nav(class='category-navigation')
+        h3
+          | Categorias
+        ul
+          li
+            a(href='') Pilsen
+          li
+            a(href='') Stout
 
-    div(ng-view)
+      div(class='content')
+        h2
+          | Cervejas
+        ul(class='beer-list')
+          li
+            img(src='http://placehold.it/200x150', alt='')
+            div(class='beer-list-info')
+              | Cerveja
+          li
+            img(src='http://placehold.it/200x150', alt='')
+            div(class='beer-list-info')
+              | Cerveja
+          li
+            img(src='http://placehold.it/200x150', alt='')
+            div(class='beer-list-info')
+              | Cerveja
+          li
+            img(src='http://placehold.it/200x150', alt='')
+            div(class='beer-list-info')
+              | Cerveja
+          li
+            img(src='http://placehold.it/200x150', alt='')
+            div(class='beer-list-info')
+              | Cerveja
 
   script(src='js/lib/angular/angular.js')
   script(src='js/app.js')
