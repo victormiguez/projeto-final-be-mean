@@ -1,3 +1,6 @@
 node_modules
 node_modules/
 node_modules/*
+gulp/.sass-cache
+gulp/.sass-cache/
+gulp/.sass-cache/*

@@ -6,9 +6,13 @@
     "body-parser": "*",
     "errorhandler": "*",
     "express": "*",
+    "gulp": "^3.8.2",
+    "gulp-compass": "^1.1.9",
+    "gulp-livereload": "^2.1.0",
     "jade": "*",
     "method-override": "*",
+    "mongoose": "^3.8.12",
     "morgan": "*",
-    "mongoose": "^3.8.12"
+    "tiny-lr": "0.0.7"
   }
 }

@@ -1,3 +1,5 @@
+@import "compass/css3";
+
 /* app css stylesheet */
 *{
   margin: 0;
@@ -19,6 +21,7 @@ ul{
 }
 
 .beer-list{
+  background:#ccc;
   height: 500px;
 }
 .beer-list li{
