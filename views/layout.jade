@@ -5,7 +5,7 @@ html(ng-app="myApp")
     base(href='/')
     title Adega Be MEAN
     link(rel='stylesheet', href='/css/normalize.css')
-    link(rel='stylesheet', href='/css/screen.css')
+    link(rel='stylesheet', href='/css/style.css')
     link(rel='apple-touch-icon', sizes='57x57', href='/img/favicon/apple-touch-icon-57x57.png')
     link(rel='apple-touch-icon', sizes='114x114', href='/img/favicon/apple-touch-icon-114x114.png')
     link(rel='apple-touch-icon', sizes='72x72', href='/img/favicon/apple-touch-icon-72x72.png')
@@ -25,25 +25,39 @@ html(ng-app="myApp")
   body
     header(class='main-header')
       div(class='wrapper')
-        img(src='img/logo.png', width='100', alt='')
-        
-        a(class='button-login-user')
-          | Criar Conta
-        button(class='button-login-user')
-          | Minha Conta
-        div(class='user-login-form-wrapper')
+        a(href='/' class='logo')
+          img(src='img/logo.png', width='100', alt='')
+
+        div(class='search-wrapper')
           form
-            label E-mail
-            input(type='email')
-            label Senha
-            input(type='password')
-            button(type='submit')
-              | Enviar
-          a(href='')
-            | Criar uma conta
+            fieldset
+              label
+                | O que você está procurando?
+              input(type='text')
+              select
+                option nois
+              button(type='submit')
+                | Pesquisar
+        
+        div(class='user-login-wrapper')
+          a(class='button-login-user')
+            | Criar Conta
+          button(class='button-login-user')
+            | Minha Conta
+          div(class='user-login-form-wrapper')
+            form
+              fieldset
+                label E-mail
+                input(type='email')
+                label Senha
+                input(type='password')
+                button(type='submit')
+                  | Enviar
+            a(href='')
+              | Criar uma conta
 
 
-    block content
+  block body
 
     footer(class='main-footer')
       div(class='wrapper')

@@ -1,9 +1,8 @@
 extends layout
 
-block content
-  section(ng-controller='IndexCtrl')
-    div(class='wrapper')
-      nav(class='category-navigation')
+block body
+  section(ng-controller='AppCtrl' class='wrapper')
+    nav(class='category-navigation')
         h3
           | Categorias
         ul
@@ -12,14 +11,7 @@ block content
           li
             a(href='') Stout
 
-      div(class='content')
-        h2
-          | Cervejas
-        ul(class='beer-list')
-          li(data-ng-repeat='cerveja in cervejas')
-            img(src='http://placehold.it/200x150', alt='')
-            div(class='beer-list-info')
-             |{{ cerveja.name }}
+    div(ng-view)
 
   script(src='js/lib/angular/angular.js')
   script(src='js/app.js')
@@ -27,3 +19,5 @@ block content
   script(src='js/controllers.js')
   script(src='js/filters.js')
   script(src='js/directives.js')
+  script(src='http://code.jquery.com/jquery-1.11.0.min.js')
+  script(src='js/jquery/jquery.index.js')

@@ -1,0 +1,40 @@
+@import "compass/css3";
+
+.main-header{
+  background: #ccc;
+  padding: 10px 0;
+  @extend %clearfix;
+}
+
+.logo{
+  float: left;
+}
+
+.user-login-wrapper{
+  float: right;
+  top: 0;
+}
+
+.user-login-form-wrapper{
+  background: cyan;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(0.5s);
+  &.active{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.button-login-user{
+
+}
+.user-login-form-wrapper label{
+  display: block;
+}
+.user-login-form-wrapper button{
+  display: block;
+}

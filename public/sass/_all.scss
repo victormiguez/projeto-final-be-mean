@@ -1,23 +1,7 @@
-@import "compass/css3";
-
-/* app css stylesheet */
-*{
-  margin: 0;
-  padding: 0;
-}
-ul{
-  list-style: none;
-}
-
 .wrapper{
   margin: 0 auto;
   position: relative;
   width: 960px;
-}
-
-.main-header{
-  background: #ccc;
-  padding: 10px 0;
 }
 
 .beer-list{
@@ -44,18 +28,4 @@ ul{
 .content{
   float: left;
   width: 710px;
-}
-
-.user-login-form-wrapper{
-  background: cyan;
-  padding: 10px;
-  position: absolute;
-  right: 0;
-  z-index: 9999;
-}
-.user-login-form-wrapper label{
-  display: block;
-}
-.user-login-form-wrapper button{
-  display: block;
 }
