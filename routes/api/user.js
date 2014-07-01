@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var user = require('../../controllers/api/shop');
+var user = require('../../controllers/api/user');
+var user = require('../../controllers/passport');
 
 router.get('/', user.retrieve);
 

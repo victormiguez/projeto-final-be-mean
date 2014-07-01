@@ -8,7 +8,7 @@ db.on('error', function(err){
   console.log('Erro de conexao.', err);
 });
 db.once('open', function () {
-  console.log('Conexão aberta.');
+  console.log('Conexão aberta - Beer.');
 });
 
 var BeerSchema = new Schema({

@@ -2,6 +2,7 @@
   margin: 0 auto;
   position: relative;
   width: 960px;
+  @extend %clearfix;
 }
 
 .beer-list{

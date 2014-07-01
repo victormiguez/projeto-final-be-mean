@@ -67,6 +67,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'expose/shops/remove',
       controller: 'ShopsRemoveCtrl'
     }).
+    when('/signup', {
+      templateUrl: 'expose/users/signup',
+      controller: 'UsersCreateCtrl'
+    }).
     otherwise({
       redirectTo: '/view1'
     });

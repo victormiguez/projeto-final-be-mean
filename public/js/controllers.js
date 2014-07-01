@@ -177,4 +177,26 @@ angular.module('myApp.controllers', []).
         $scope.msg = 'Error:  ' + err;
       });
     }
+  }]).
+  controller('UsersCreateCtrl', ['$scope', '$http', function ($scope, $http) {
+    $scope.msg = 'Cadastro de Usuário'
+    var url = '/api/users/';
+
+    $scope.create = function(usuario){
+      var method = 'POST';
+      console.table(usuario);
+      $http({
+        method: method,
+        url: url,
+        data: usuario
+      })
+      .success(function(data){
+        $scope.msg = 'Usuário ' + usuario.name + ' criada com SUCESSO';
+      })
+      .error(function(err){
+        console.log('Error: ', err);
+        $scope.msg = 'Error:  ' + err;
+      });
+    }
+
   }]);

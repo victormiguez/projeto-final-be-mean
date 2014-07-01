@@ -10,6 +10,8 @@ gulp.task('compass', function() {
             css: '../public/css',
             sass: '../public/sass',
         }))
+        .on('error', function(err) {
+        })
         .pipe(gulp.dest('../public/css'))
         .pipe(refresh(server));
 });

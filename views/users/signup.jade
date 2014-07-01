@@ -1,0 +1,17 @@
+h4 {{ msg }}
+
+form.container-small
+  label
+    | Nome:
+    input(type='text', name='usuario.name', 
+          data-ng-model='usuario.name')
+  label
+    | Senha:
+    input(type='password', name='usuario.password', 
+          data-ng-model='usuario.password')
+  label
+    | E-mail:
+    input(type='email', name='usuario.email', 
+          data-ng-model='usuario.email')
+  button(data-ng-click='create(usuario)')
+    | Criar

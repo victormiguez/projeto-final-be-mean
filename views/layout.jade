@@ -27,17 +27,6 @@ html(ng-app="myApp")
       div(class='wrapper')
         a(href='/' class='logo')
           img(src='img/logo.png', width='100', alt='')
-
-        div(class='search-wrapper')
-          form
-            fieldset
-              label
-                | O que você está procurando?
-              input(type='text')
-              select
-                option nois
-              button(type='submit')
-                | Pesquisar
         
         div(class='user-login-wrapper')
           a(class='button-login-user')
@@ -45,7 +34,7 @@ html(ng-app="myApp")
           button(class='button-login-user')
             | Minha Conta
           div(class='user-login-form-wrapper')
-            form
+            form(action='/api/users/login' method='post')
               fieldset
                 label E-mail
                 input(type='email')
@@ -55,6 +44,16 @@ html(ng-app="myApp")
                   | Enviar
             a(href='')
               | Criar uma conta
+        div(class='search-wrapper')
+          form
+            fieldset
+              label
+                | O que você está procurando?
+              input(type='text')
+              select
+                option Cerveja
+                option Loja
+              button(type='submit' class='icon-search' title='Pesquisar')
 
 
   block body
