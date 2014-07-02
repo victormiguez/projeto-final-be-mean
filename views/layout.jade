@@ -21,7 +21,6 @@ html(ng-app="myApp")
     link(rel='icon', type='image/png', href='/img/favicon/favicon-32x32.png', sizes='32x32')
     meta(name='msapplication-TileColor', content='#da532c')
     meta(name='msapplication-TileImage', content='/mstile-144x144.png')
-
   body
     header(class='main-header')
       div(class='wrapper')
@@ -37,9 +36,9 @@ html(ng-app="myApp")
             form(action='/api/users/login' method='post')
               fieldset
                 label E-mail
-                input(type='email')
+                input(type='text' name='username')
                 label Senha
-                input(type='password')
+                input(type='password' name='password')
                 button(type='submit')
                   | Enviar
             a(href='')
@@ -54,7 +53,6 @@ html(ng-app="myApp")
                 option Cerveja
                 option Loja
               button(type='submit' class='icon-search' title='Pesquisar')
-
 
   block body
 

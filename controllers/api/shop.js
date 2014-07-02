@@ -50,7 +50,7 @@ var _shop = {
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Cerveja atualizada com sucesso', data);
+        console.log('Loja atualizada com sucesso', data);
         msg = data;
       } 
       res.json(msg);

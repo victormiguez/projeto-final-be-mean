@@ -4,3 +4,6 @@ node_modules/*
 gulp/.sass-cache
 gulp/.sass-cache/
 gulp/.sass-cache/*
+bower_components
+bower_components/
+bower_components/*

@@ -11,7 +11,7 @@ var _user = {
         msg = 0;
       }
       else{
-        console.log('Loja adicionada: ', data);  
+        console.log('Usuário adicionado: ', data);  
         msg = data 
       }
       res.send(msg);
@@ -50,7 +50,7 @@ var _user = {
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Cerveja atualizada com sucesso', data);
+        console.log('Usuário atualizado com sucesso', data);
         msg = data;
       } 
       res.json(msg);
@@ -64,7 +64,7 @@ var _user = {
         console.log(err);
         msg = 0;
       } else {
-        console.log('Loja deletada com sucesso', data);
+        console.log('Usuário deletado com sucesso', data);
         msg = data;
       }
       res.json(msg);
