@@ -44,15 +44,15 @@ html(ng-app="myApp")
             a(href='')
               | Criar uma conta
         div(class='search-wrapper')
-          form
+          form(data-ng-controller='BeersSearchCtrl')
             fieldset
               label
                 | O que você está procurando?
-              input(type='text')
+              input(type='text', name='busca.name', data-ng-model='busca.name')
               select
-                option Cerveja
-                option Loja
-              button(type='submit' class='icon-search' title='Pesquisar')
+                option Nome
+                option Categoria
+              button(type='submit' class='icon-search' title='Pesquisar' data-ng-click='search(busca)')
 
   block body
 

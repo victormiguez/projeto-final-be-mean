@@ -11,7 +11,6 @@ var _user = {
         msg = 0;
       }
       else{
-        console.log('Usuário adicionado: ', data);  
         msg = data 
       }
       res.send(msg);
@@ -23,7 +22,6 @@ var _user = {
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Listagem: ', data);  
         msg = data; 
       }
       res.json(msg);
@@ -36,7 +34,6 @@ var _user = {
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Listagem: ', data);  
         msg = data; 
       }
       res.json(msg);
@@ -50,7 +47,6 @@ var _user = {
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Usuário atualizado com sucesso', data);
         msg = data;
       } 
       res.json(msg);
@@ -64,7 +60,6 @@ var _user = {
         console.log(err);
         msg = 0;
       } else {
-        console.log('Usuário deletado com sucesso', data);
         msg = data;
       }
       res.json(msg);

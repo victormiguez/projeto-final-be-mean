@@ -14,18 +14,6 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'expose/index/list',
       controller: 'BeersIndexCtrl'
     }).
-    when('/view1', {
-      templateUrl: 'partials/partial1',
-      controller: 'MyCtrl1'
-    }).
-    when('/view2', {
-      templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
-    }).
-    when('/view3', {
-      templateUrl: 'partials/partial3',
-      controller: 'MyCtrl2'
-    }).
     // criando a rota de listagem das cervejas
     when('/beers', {
       templateUrl: 'expose/beers/list',
@@ -71,8 +59,12 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'expose/users/signup',
       controller: 'UsersCreateCtrl'
     }).
+    when('/busca', {
+      templateUrl: 'expose/beers/search',
+      controller: 'BeersIndexCtrl'
+    }).
     otherwise({
-      redirectTo: '/view1'
+      redirectTo: '/'
     });
 
   $locationProvider.html5Mode(true);

@@ -1,4 +1,14 @@
+nav(class='category-navigation')
+  h3
+    | Categorias
+  ul
+    li(data-ng-repeat='cerveja in cervejas')
+      a(href='beers/{{ cerveja.category }}')
+        | {{ cerveja.category }}
+
 div(class='content')
+  h4
+    | {{username}}
   h2
     | Cervejas
   ul(class='beer-list')

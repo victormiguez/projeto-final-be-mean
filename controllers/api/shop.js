@@ -11,7 +11,6 @@ var _shop = {
         msg = 0;
       }
       else{
-        console.log('Loja adicionada: ', data);  
         msg = data 
       }
       res.send(msg);
@@ -23,7 +22,6 @@ var _shop = {
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Listagem: ', data);  
         msg = data; 
       }
       res.json(msg);
@@ -36,7 +34,6 @@ var _shop = {
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Listagem: ', data);  
         msg = data; 
       }
       res.json(msg);
@@ -50,7 +47,6 @@ var _shop = {
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Loja atualizada com sucesso', data);
         msg = data;
       } 
       res.json(msg);
@@ -64,7 +60,6 @@ var _shop = {
         console.log(err);
         msg = 0;
       } else {
-        console.log('Loja deletada com sucesso', data);
         msg = data;
       }
       res.json(msg);

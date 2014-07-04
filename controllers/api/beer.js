@@ -1,32 +1,40 @@
 var Beer = require('../../models/beer');
-var createCtrl = require('../partial/create');
 
-console.log(createCtrl);
 var _beer = {
-  create: createCtrl('req', 'res', 'Beer', 'Cerveja inserida: '),
-  // create: function(req, res){
-  //   var dados = req.body;
-  //   var model = new Beer(dados);
+  create: function(req, res){
+    var dados = req.body;
+    var model = new Beer(dados);
 
-  //   model.save(function (err, data) {
-  //     if (err){
-  //       console.log('Erro: ', err);
-  //       msg = 0;
-  //     }
-  //     else{
-  //       console.log('Cerveja Inserida: ', data);  
-  //       msg = data 
-  //     }
-  //     res.send(msg);
-  //   });
-  // },
+    model.save(function (err, data) {
+      if (err){
+        console.log('Erro: ', err);
+        msg = 0;
+      }
+      else{
+        msg = data 
+      }
+      res.send(msg);
+    });
+  },
   retrieve: function(req, res){
     Beer.find({}, function (err, data) {
       if (err){
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Listagem: ', data);  
+        msg = data; 
+      }
+      res.json(msg);
+    });
+  },
+  search: function(req, res){
+    var query = {name: req.params.name};
+    console.log('Search');
+    Beer.find(query, function (err, data) {
+      if (err){
+        console.log('Erro: ', err);
+        msg = 0;
+      }else{
         msg = data; 
       }
       res.json(msg);
@@ -34,12 +42,12 @@ var _beer = {
   },
   findOne: function(req, res){
     var query = {_id: req.params.id};
+    console.log('Find');
     Beer.findOne(query, function (err, data) {
       if (err){
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Listagem: ', data);  
         msg = data; 
       }
       res.json(msg);
@@ -53,7 +61,6 @@ var _beer = {
         console.log('Erro: ', err);
         msg = 0;
       }else{
-        console.log('Cerveja atualizada com sucesso', data);
         msg = data;
       } 
       res.json(msg);
@@ -67,7 +74,6 @@ var _beer = {
         console.log(err);
         msg = 0;
       } else {
-        console.log('Cerveja deletada com sucesso', data);
         msg = data;
       }
       res.json(msg);
@@ -76,4 +82,3 @@ var _beer = {
 }
 
 module.exports = _beer;
-

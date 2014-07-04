@@ -61,6 +61,7 @@ var api = {};
 api.beer = require('./controllers/api/beer');
 app.get('/api/beers', api.beer.retrieve);
 app.get('/api/beers/:id', api.beer.findOne);
+app.get('/api/beers/busca/:name', api.beer.search);
 app.post('/api/beers', api.beer.create);
 app.put('/api/beers/:id', api.beer.update);
 app.delete('/api/beers/:id', api.beer.delete);
@@ -81,17 +82,28 @@ app.delete('/api/users/:id', api.user.delete);
 
 api.auth = require('./controllers/passport.js');
 app.post('/api/users/login',
-  passport.authenticate('local', {
-    successRedirect: '/loginSuccess',
-    failureRedirect: '/loginFailure'
-  }));
-app.get('/loginFailure' , function(req, res, next){
-  res.send('Failure to authenticate');
-});
+  passport.authenticate('local'),
+  function(req, res, user) {
+    res.redirect('/');
+  });
 
-app.get('/loginSuccess' , function(req, res, next){
-  res.send('Successfully authenticated');
-});
+
+// app.post('/api/users/login', passport.authenticate('local', {
+//     successRedirect: '/loginSuccess',
+//     failureRedirect: '/loginFailure'
+// }));
+
+
+// app.get('/loginFailure' , function(req, res, next){
+//   res.send('Failure to authenticate');
+// });
+
+// app.get('/loginSuccess', function(req, res) {
+//   console.log('Success');
+//   var teste = res.user;
+//   console.log(teste);
+//     // res.render('./views/index.jade', { username: req.user.username });
+// });
 
 
 

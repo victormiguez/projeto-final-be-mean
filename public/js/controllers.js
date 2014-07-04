@@ -17,23 +17,12 @@ angular.module('myApp.controllers', []).
     });
 
   }).
-  controller('MyCtrl1', function ($scope) {
-    // write Ctrl here
-
-  }).
-  controller('MyCtrl2', function ($scope) {
-    // write Ctrl here
-
-  }).
   controller('BeersIndexCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.workshop = 'Workshop Be MEAN';
 
-    // Código colado do exercicio 08
     $scope.reverse = false;
     $scope.predicate = 'name';
     $scope.cervejas = [];
-    // criamos um array de cervejas
-    // Precisamos buscar nosssas cervejas na nossa API
     var url = '/api/beers';
 
     $http.get(url)
@@ -70,6 +59,21 @@ angular.module('myApp.controllers', []).
       .error(function(err){
         console.log('Error: ', err);
         $scope.msg = 'Error:  ' + err;
+      });
+    }
+
+  }]).
+  controller('BeersSearchCtrl', ['$scope', '$http', '$routeParams', '$location', 
+    function ($scope, $http, $routeParams, $location) {
+    var url = '/api/beers/busca/';
+
+    $scope.search = function(busca){
+      var buscaParam = url+busca.name;
+      console.log(buscaParam);
+      $http.get(buscaParam)
+      .success(function(data){
+        // console.log(data);
+        $location.path('/beers');
       });
     }
 
