@@ -15,5 +15,5 @@ div(class='content')
     li(data-ng-repeat='cerveja in cervejas')
       img(src='http://placehold.it/200x150', alt='')
       div(class='beer-list-info')
-        a(href='beers/{{ cerveja._id }}')
+        a(href='beers/details/{{ cerveja._id }}')
           |{{ cerveja.name }}

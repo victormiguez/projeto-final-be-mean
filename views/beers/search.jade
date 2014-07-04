@@ -1,16 +1,13 @@
 h4 Busca das cervejas
-table.container-small
-  thead
-    tr
-      th 
-        a.order(data-ng-click='orderBy(\'name\')') Name
-      th
-        a.order(data-ng-click='orderBy(\'category\')') Category
-  tbody
-    tr(data-ng-repeat='cerveja in cervejas | orderBy:predicate:reverse')
-      td 
-        a(data-ng-href='/beers/{{cerveja._id}}')
+div(class='content')
+  h4
+    | {{ msg }}
+  h2
+    | Cervejas
+  ul(class='beer-list')
+    li Ah
+    li(data-ng-repeat='cerveja in cervej')
+      img(src='http://placehold.it/200x150', alt='')
+      div(class='beer-list-info')
+        a(href='beers/details/{{ cerveja._id }}')
           |{{ cerveja.name }}
-      td 
-        a(data-ng-href='/beers/{{cerveja._id}}')
-          |{{ cerveja.category }}

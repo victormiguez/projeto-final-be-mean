@@ -23,17 +23,21 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'expose/beers/create',
       controller: 'BeersCreateCtrl'
     }).
-    when('/beers/:id', {
+    when('/beers/details/:id', {
       templateUrl: 'expose/beers/show',
       controller: 'BeersShowCtrl'
     }).
-    when('/beers/:id/edit', {
+    when('/beers/details/:id/edit', {
       templateUrl: 'expose/beers/edit',
       controller: 'BeersEditCtrl'
     }).
-    when('/beers/:id/remove', {
+    when('/beers/details/:id/remove', {
       templateUrl: 'expose/beers/remove',
       controller: 'BeersRemoveCtrl'
+    }).
+    when('/beers/search', {
+      templateUrl: 'expose/beers/search',
+      controller: 'BeersSearchCtrl'
     }).
     when('/shops', {
       templateUrl: 'expose/shops/list',
@@ -58,10 +62,6 @@ config(function ($routeProvider, $locationProvider) {
     when('/signup', {
       templateUrl: 'expose/users/signup',
       controller: 'UsersCreateCtrl'
-    }).
-    when('/busca', {
-      templateUrl: 'expose/beers/search',
-      controller: 'BeersIndexCtrl'
     }).
     otherwise({
       redirectTo: '/'

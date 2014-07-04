@@ -61,21 +61,34 @@ angular.module('myApp.controllers', []).
         $scope.msg = 'Error:  ' + err;
       });
     }
-
   }]).
   controller('BeersSearchCtrl', ['$scope', '$http', '$routeParams', '$location', 
     function ($scope, $http, $routeParams, $location) {
     var url = '/api/beers/busca/';
+    $scope.cervejas = [];
 
     $scope.search = function(busca){
-      var buscaParam = url+busca.name;
+      buscaParam = url+busca.name;
       console.log(buscaParam);
       $http.get(buscaParam)
       .success(function(data){
-        // console.log(data);
-        $location.path('/beers');
+        valor = data;
+        $location.path('/beers/search');
       });
     }
+
+    console.log(buscaParam);
+
+
+
+        // $scope.cervejas = data;
+        // var array = $scope.cervejas;
+        // if (array.length == 0) {
+        //   console.log('Vazio');
+        //   $scope.msg = 'Essa porra ta vazia';
+        // } else{
+        //   $scope.msg = 'Essa porra ta cheia';
+        // }
 
   }]).
   controller('BeersShowCtrl', ['$scope', '$http', '$routeParams', 

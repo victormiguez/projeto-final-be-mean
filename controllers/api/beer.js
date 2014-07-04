@@ -28,9 +28,13 @@ var _beer = {
     });
   },
   search: function(req, res){
+    var queryRx = {name: new RegExp(req.params.name)};
     var query = {name: req.params.name};
-    console.log('Search');
-    Beer.find(query, function (err, data) {
+    
+    console.log(query);
+    console.log(queryRx);
+    
+    Beer.find(queryRx, function (err, data) {
       if (err){
         console.log('Erro: ', err);
         msg = 0;

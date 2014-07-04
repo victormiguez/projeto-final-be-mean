@@ -1,9 +1,13 @@
 @import "compass/css3";
 body{
-  background: #DCD7AB url('http://barbrejas.com/wp-content/themes/Restaurant/images/bodybg.png') repeat-x;
+  background: url('../img/teste.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .main-header{
-  background: rgba(#DCD7AB, 0.7);
+  background: rgba(#c4aa81, 1);
   padding: 10px 0;
   @extend %clearfix;
 }
