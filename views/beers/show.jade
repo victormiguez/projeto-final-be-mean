@@ -12,7 +12,7 @@ ul(class='block-list')
     | Descrição: {{ cerveja.description }}
 
 div(class='btn-wrapper')
-  a(class='btn' data-ng-href='beers/details/{{cerveja._id}}/edit')
+  a(class='btn', data-ng-href='beers/details/{{cerveja._id}}/edit')
     | Alterar
-  button(class='btn' data-ng-click='remove(cerveja)')
+  button(class='btn', data-ng-click='remove(cerveja)')
     | Excluir

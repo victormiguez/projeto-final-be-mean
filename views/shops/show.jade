@@ -1,5 +1,5 @@
-ul
-  h4 {{ loja.name }}
+h4(class='bordered-title') {{ loja.name }}
+ul(class='block-list')
   li
     | Nome: {{ loja.name }}
   li
@@ -17,9 +17,8 @@ ul
   li
     | País: {{ loja.address.pais }}
 
-p
-  a(data-ng-href='shops/{{loja._id}}/edit')
+div(class='btn-wrapper')
+  a(class='btn', data-ng-href='shops/{{loja._id}}/edit')
     | Alterar
-p 
-  button(data-ng-click='remove(loja)')
+  button(class='btn', data-ng-click='remove(loja)')
     | Excluir

@@ -17,10 +17,11 @@
 }
 
 .user-login-form-wrapper{
-  background: #666;
+  border: 1px solid $gray;
+  background: lighten($gray, 10%);
   padding: 10px;
   position: absolute;
-  right: 0;
+  right: 10px;
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
@@ -29,12 +30,6 @@
     opacity: 1;
     visibility: visible;
   }
-}
-.user-login-form-wrapper label{
-  display: block;
-}
-.user-login-form-wrapper button{
-  display: block;
 }
 
 .search-wrapper{

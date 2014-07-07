@@ -36,5 +36,6 @@ form.container-small
         | E-mail:
         input(type='email', name='usuario.email', 
               data-ng-model='usuario.email')
-  button(class='btn' data-ng-click='create(usuario)')
-    | Criar
+  div(class='btn-wrapper')
+    button(class='btn' data-ng-click='create(usuario)')
+      | Criar

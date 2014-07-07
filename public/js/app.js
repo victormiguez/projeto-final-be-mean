@@ -43,15 +43,15 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'expose/shops/create',
       controller: 'ShopsCreateCtrl'
     }).
-    when('/shops/:_id', {
+    when('/shops/:id', {
       templateUrl: 'expose/shops/show',
       controller: 'ShopsShowCtrl'
     }).
-    when('/shops/:_id/edit', {
+    when('/shops/:id/edit', {
       templateUrl: 'expose/shops/edit',
       controller: 'ShopsEditCtrl'
     }).
-    when('/shops/:_id/remove', {
+    when('/shops/:id/remove', {
       templateUrl: 'expose/shops/remove',
       controller: 'ShopsRemoveCtrl'
     }).

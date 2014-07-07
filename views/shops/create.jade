@@ -1,37 +1,52 @@
-h4 {{ msg }}
+div(class='success')
+  p(class='msg') {{ scsMsg }}
+div(class='error')
+  p(class='msg') {{ errMsg }}
+
+h4(class='bordered-title') Cadastro de loja
 
 form.container-small
-  label
-    | Name:
-    input(type='text', name='loja.name', 
-          data-ng-model='loja.name')
-  label
-    | Logradouro:
-    input(type='text', name='loja.address.logradouro', 
-          data-ng-model='loja.address.logradouro')
-  label
-    | Número:
-    input(type='text', name='loja.address.numero', 
-          data-ng-model='loja.address.numero')
-  label
-    | Complemento:
-    input(type='text', name='loja.address.complemento', 
-          data-ng-model='loja.address.complemento')
-  label
-    | Bairro:
-    input(type='text', name='loja.address.bairro', 
-          data-ng-model='loja.address.bairro')
-  label
-    | Cidade:
-    input(type='text', name='loja.address.cidade', 
-          data-ng-model='loja.address.cidade')
-  label
-    | Estado:
-    input(type='text', name='loja.address.estado', 
-          data-ng-model='loja.address.estado')
-  label
-    | País:
-    input(type='text', name='loja.address.pais', 
-          data-ng-model='loja.address.pais')
-  button(data-ng-click='create(loja)')
-    | Criar
+  fieldset
+    div(class='input-100')
+      label
+        | Nome:
+        input(type='text', name='loja.name', 
+              data-ng-model='loja.name')
+    div(class='input-75 margin-input')
+      label
+        | Logradouro:
+        input(type='text', name='loja.address.logradouro', 
+              data-ng-model='loja.address.logradouro')
+    div(class='input-25')
+      label
+        | Número:
+        input(type='text', name='loja.address.numero', 
+              data-ng-model='loja.address.numero')
+    div(class='input-25 margin-input')
+      label
+        | Complemento:
+        input(type='text', name='loja.address.complemento', 
+              data-ng-model='loja.address.complemento')
+    div(class='input-50 margin-input')
+      label
+        | Bairro:
+        input(type='text', name='loja.address.bairro', 
+              data-ng-model='loja.address.bairro')
+    div(class='input-25')
+      label
+        | Cidade:
+        input(type='text', name='loja.address.cidade', 
+              data-ng-model='loja.address.cidade')
+    div(class='input-50 margin-input')
+      label
+        | Estado:
+        input(type='text', name='loja.address.estado', 
+              data-ng-model='loja.address.estado')
+    div(class='input-50')
+      label
+        | País:
+        input(type='text', name='loja.address.pais', 
+              data-ng-model='loja.address.pais')
+  div(class='btn-wrapper')
+    button(class='btn' data-ng-click='create(loja)')
+      | Criar

@@ -27,21 +27,29 @@ html(ng-app="myApp")
         img(src='img/logo.png', width='100', alt='')
       
       div(class='user-login-wrapper')
-        a(href='/signup') Criar Conta 
-        a(href='/signup') Criar Loja
+        a(href='/beers/create', class='btn-link') Cadastrar Cerveja
+        a(href='/shops/create', class='btn-link') Criar Loja
+        a(href='/signup', class='btn-link') Criar Conta
         button(class='btn btn-small' id='account-button') Minha Conta
 
         div(class='user-login-form-wrapper')
           form(action='/api/users/login' method='post')
             fieldset
-              label E-mail
-              input(type='text' name='username')
-              label Senha
-              input(type='password' name='password')
-              button(type='submit')
-                | Enviar
-          a(href='/signup')
-            | Criar uma conta
+              
+              div(class='input-100')
+                label E-mail
+                input(type='text' name='username')
+                
+              div(class='input-100')
+                label Senha
+                input(type='password' name='password')
+              
+              div(class='btn-wrapper')
+                button(class='btn btn-small', type='submit')
+                  | Enviar
+          div(class='btn-wrapper')
+            a(href='/signup', class='btn-link')
+              | Criar uma conta
 
       div(class='search-wrapper')
         form(data-ng-controller='BeersSearchCtrl')
