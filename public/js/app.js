@@ -33,7 +33,7 @@ config(function ($routeProvider, $locationProvider) {
     }).
     when('/beers/search', {
       templateUrl: 'expose/beers/search',
-      controller: 'BeersSearchShowCtrl'
+      controller: 'BeersSearchCtrl'
     }).
     when('/shops', {
       templateUrl: 'expose/shops/list',

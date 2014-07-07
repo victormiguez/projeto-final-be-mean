@@ -37,7 +37,7 @@ gulp.task('watch', function() {
     server.listen(35729, function(err) {
         if (err) { return console.log(err); }
         gulp.watch('../public/sass/**/*.scss', ['compass']);
-        gulp.watch('../public/js/controllers.js', ['browserify']);
+        gulp.watch(['../public/js/controllers.js', '../public/js/controllers/*.js'], ['browserify']);
         gulp.watch('../views/**/*.jade', ['jade']);
     });
 });

@@ -61,7 +61,7 @@ var api = {};
 api.beer = require('./controllers/api/beer');
 app.get('/api/beers', api.beer.retrieve);
 app.get('/api/beers/:id', api.beer.findOne);
-app.get('/api/beers/busca/:name', api.beer.search);
+app.get('/api/beers/search/:name', api.beer.search);
 app.post('/api/beers', api.beer.create);
 app.put('/api/beers/:id', api.beer.update);
 app.delete('/api/beers/:id', api.beer.delete);

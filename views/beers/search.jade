@@ -1,13 +1,21 @@
 h4 Busca das cervejas
+
+//- div(class='search-wrapper')
+//-   form
+//-     fieldset
+//-       label
+//-         | O que você está procurando?
+//-         input(type='text', placeholder='Nome de uma cerveja' data-ng-model='busca')
+//-       button(class='btn btn-small' type='submit' class='icon-search' title='Pesquisar' data-ng-click='search(busca)')
+//-         | Pesquisar
+
+
+
 div(class='content')
   h4
-    | {{ msg }}
+    | {{ cervejas }}
   h2
     | Cervejas
-  //- ul(class='beer-list')
-  //-   li(data-ng-repeat='evento in eventos')
-  //-     span
-  //-       | {{evento.nome}}
   ul(class='beer-list')
-    li()
-      |{{ busca }}
+    li(data-ng-repeat='cerveja in cervejas')
+      {{cerveja.name}}

@@ -41,14 +41,21 @@ var beersCtrl = {
     }
   },
   search: function ($scope, $http, $location) {
-    var url = '/api/beers/busca/';
+    var url = '/api/beers/search/';
     $scope.cervejas = [];
+    $scope.busca = 'Skol';
 
     $scope.search = function(busca){
+
       var buscaParam = url+busca;
-      console.log(buscaParam);
-      $http.get(buscaParam).success(function(data){
-        $scope.search.cervejas = data;
+      // console.log($scope.busca);
+
+      // $http.get(buscaParam).success(function(data){
+
+      $http.get(buscaParam)
+      .success(function(data){
+        $scope.cervejas = data;
+        console.log('Cervejas', $scope.cervejas);
         $location.path('/beers/search');
       });
     }
