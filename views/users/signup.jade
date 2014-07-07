@@ -1,17 +1,40 @@
-h4 {{ msg }}
+div(class='success')
+  p(class='msg') {{ scsMsg }}
+div(class='error')
+  p(class='msg') {{ errMsg }}
+
+h4(class='bordered-title') Cadastro de usuário
 
 form.container-small
-  label
-    | Nome:
-    input(type='text', name='usuario.name', 
-          data-ng-model='usuario.name')
-  label
-    | Senha:
-    input(type='password', name='usuario.password', 
-          data-ng-model='usuario.password')
-  label
-    | E-mail:
-    input(type='email', name='usuario.email', 
-          data-ng-model='usuario.email')
-  button(data-ng-click='create(usuario)')
+  fieldset
+    div(class='input-75 margin-input')
+      label
+        | Nome:
+        input(type='text', name='usuario.name', 
+              data-ng-model='usuario.name')
+
+    div(class='input-25 margin-input')
+      label
+        | Data de nascimento:
+        input(type='text', name='usuario.birth', maxlength='10', 
+              data-ng-model='usuario.birth')
+
+    div(class='input-50 margin-input')
+      label
+        | Login:
+        input(type='text', name='usuario.username', 
+              data-ng-model='usuario.username')
+
+    div(class='input-50 margin-input')
+      label
+        | Senha:
+        input(type='password', name='usuario.password', 
+              data-ng-model='usuario.password')
+
+    div(class='input-50')
+      label
+        | E-mail:
+        input(type='email', name='usuario.email', 
+              data-ng-model='usuario.email')
+  button(class='btn' data-ng-click='create(usuario)')
     | Criar

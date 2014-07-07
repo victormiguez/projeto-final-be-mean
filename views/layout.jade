@@ -23,36 +23,34 @@ html(ng-app="myApp")
     meta(name='msapplication-TileImage', content='/mstile-144x144.png')
   body
     header(class='main-header')
-      div(class='wrapper')
-        a(href='/' class='logo')
-          img(src='img/logo.png', width='100', alt='')
-        
-        div(class='user-login-wrapper')
-          a(class='button-login-user')
-            | Criar Conta
-          button(class='button-login-user')
-            | Minha Conta
-          div(class='user-login-form-wrapper')
-            form(action='/api/users/login' method='post')
-              fieldset
-                label E-mail
-                input(type='text' name='username')
-                label Senha
-                input(type='password' name='password')
-                button(type='submit')
-                  | Enviar
-            a(href='')
-              | Criar uma conta
-        div(class='search-wrapper')
-          form(data-ng-controller='BeersSearchCtrl')
+      a(href='/' class='logo')
+        img(src='img/logo.png', width='100', alt='')
+      
+      div(class='user-login-wrapper')
+        a(href='/signup') Criar Conta 
+        a(href='/signup') Criar Loja
+        button(class='btn btn-small' id='account-button') Minha Conta
+
+        div(class='user-login-form-wrapper')
+          form(action='/api/users/login' method='post')
             fieldset
-              label
-                | O que você está procurando?
-              input(type='text', name='busca.name', data-ng-model='busca.name')
-              select
-                option Nome
-                option Categoria
-              button(type='submit' class='icon-search' title='Pesquisar' data-ng-click='search(busca)')
+              label E-mail
+              input(type='text' name='username')
+              label Senha
+              input(type='password' name='password')
+              button(type='submit')
+                | Enviar
+          a(href='/signup')
+            | Criar uma conta
+
+      div(class='search-wrapper')
+        form(data-ng-controller='BeersSearchCtrl')
+          fieldset
+            label
+              | O que você está procurando?
+              input(type='text', placeholder='Nome de uma cerveja' data-ng-model='busca')
+            button(class='btn btn-small' type='submit' class='icon-search' title='Pesquisar' data-ng-click='search(busca)')
+              | Pesquisar
 
   block body
 

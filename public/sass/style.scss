@@ -1,11 +1,17 @@
 @import "compass/css3";
 
 @import "base/helpers";
+@import "base/variables";
 
 @import "core/normalize";
 @import "core/basics";
+@import "core/forms";
 @import "core/ico";
+@import "core/button";
 
 @import "layout/header";
+
+@import "pages/index";
+@import "pages/show";
 
 @import "all"

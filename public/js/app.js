@@ -31,13 +31,9 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'expose/beers/edit',
       controller: 'BeersEditCtrl'
     }).
-    when('/beers/details/:id/remove', {
-      templateUrl: 'expose/beers/remove',
-      controller: 'BeersRemoveCtrl'
-    }).
     when('/beers/search', {
       templateUrl: 'expose/beers/search',
-      controller: 'BeersSearchCtrl'
+      controller: 'BeersSearchShowCtrl'
     }).
     when('/shops', {
       templateUrl: 'expose/shops/list',

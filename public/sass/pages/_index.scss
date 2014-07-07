@@ -1,0 +1,23 @@
+.full-bordered-title{
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  font-size: 40px;
+  font-weight: 400;
+  height: 51px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.success{
+  background: #2ecc71;
+  @extend %clearfix;
+}
+.error{
+  background: #e74c3c;
+  @extend %clearfix;
+}
+.msg{
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}

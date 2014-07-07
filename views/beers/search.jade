@@ -4,10 +4,10 @@ div(class='content')
     | {{ msg }}
   h2
     | Cervejas
+  //- ul(class='beer-list')
+  //-   li(data-ng-repeat='evento in eventos')
+  //-     span
+  //-       | {{evento.nome}}
   ul(class='beer-list')
-    li Ah
-    li(data-ng-repeat='cerveja in cervej')
-      img(src='http://placehold.it/200x150', alt='')
-      div(class='beer-list-info')
-        a(href='beers/details/{{ cerveja._id }}')
-          |{{ cerveja.name }}
+    li()
+      |{{ busca }}

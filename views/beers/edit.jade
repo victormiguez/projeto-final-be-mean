@@ -1,25 +1,36 @@
-h4 {{ msg }}
+div(class='success')
+  p(class='msg') {{ scsMsg }}
+div(class='error')
+  p(class='msg') {{ errMsg }}
+
+h4(class='bordered-title') {{ cerveja.name }}
 
 form.container-small
-  label
-    | Name:
-    input(type='text', name='cerveja.name', 
-          data-ng-model='cerveja.name')
-  label
-    | Category:
-    input(type='text', name='cerveja.category', 
-          data-ng-model='cerveja.category')
-  label
-    | Price:
-    input(type='text', name='cerveja.price', 
-          data-ng-model='cerveja.price')
-  label
-    | Alcohol:
-    input(type='text', name='cerveja.alcohol', 
-          data-ng-model='cerveja.alcohol')
-  label
-    | Description:
-    textarea(name='description', 
-            data-ng-model='cerveja.description')
-  button(data-ng-click='update(cerveja)')
-    | Salvar
+  div(class='input-50 margin-input')
+    label
+      | Nome:
+      input(type='text', name='cerveja.name', 
+            data-ng-model='cerveja.name')
+  div(class='input-50')
+    label
+      | Categoria:
+      input(type='text', name='cerveja.category', 
+            data-ng-model='cerveja.category')
+  div(class='input-50 margin-input')
+    label
+      | Preço:
+      input(type='text', name='cerveja.price', 
+            data-ng-model='cerveja.price')
+  div(class='input-50')
+    label
+      | Alcool:
+      input(type='text', name='cerveja.alcohol', 
+            data-ng-model='cerveja.alcohol')
+  div(class='input-100')
+    label
+      | Descriçao:
+      textarea(name='description', 
+              data-ng-model='cerveja.description')
+  div(class='btn-wrapper')
+    button(class='btn' data-ng-click='update(cerveja)')
+      | Salvar

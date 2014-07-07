@@ -15,10 +15,9 @@ var UserSchema = new Schema({
     type: String,
     default: '' 
   },
-  email: {
-    required: true,
+  birth:{
     type: String,
-    default: ''
+    min: 0
   },
   username: {
     required: true,
@@ -30,9 +29,10 @@ var UserSchema = new Schema({
     type: String,
     default: '' 
   },
-  birth:{
-    type: Number,
-    min: 0
+  email: {
+    required: true,
+    type: String,
+    default: ''
   },
   beers:{
     type: String,

@@ -1,19 +1,13 @@
-nav(class='category-navigation')
-  h3
-    | Categorias
-  ul
-    li(data-ng-repeat='cerveja in cervejas')
-      a(href='beers/{{ cerveja.category }}')
-        | {{ cerveja.category }}
-
-div(class='content')
-  h4
-    | {{username}}
-  h2
-    | Cervejas
-  ul(class='beer-list')
-    li(data-ng-repeat='cerveja in cervejas')
-      img(src='http://placehold.it/200x150', alt='')
-      div(class='beer-list-info')
-        a(href='beers/details/{{ cerveja._id }}')
-          |{{ cerveja.name }}
+h1(class='full-bordered-title')
+  | Últimas cervejas cadastradas
+div(class='btn-wrapper')
+  span Ordenar por: 
+  button(class='btn btn-small' data-ng-click='orderBy(\'name\')') Nome
+  button(class='btn btn-small' data-ng-click='orderBy(\'category\')') Categoria
+ul(class='beer-list')
+  li(data-ng-repeat='cerveja in cervejas | orderBy:predicate:reverse')
+    img(src='http://placehold.it/175x150', alt='')
+    a(href='beers/details/{{ cerveja._id }}')
+      |{{ cerveja.name }}
+      br
+      |{{ cerveja.category }}

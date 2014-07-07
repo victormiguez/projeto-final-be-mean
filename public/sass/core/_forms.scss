@@ -1,0 +1,58 @@
+label,
+input,
+textarea{
+  display: block;
+  width: 100%;
+}
+
+input,
+textarea{
+  background: none;
+  border: none;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 10px;
+  outline: none;
+  @extend %border-box;
+  @extend %trs03;
+  &:focus{
+    border-bottom: 1px solid $yellow;
+  }
+}
+
+textarea{
+  resize: none;
+}
+
+
+[class^="input-"],
+[class*=" input-"]{
+  margin-bottom: 20px;
+}
+
+.input-100{
+  width: 100%;
+}
+.input-75{
+  float: left;
+  width: 75%;
+  &.margin-input{
+    margin-right: 2%;
+    width: 73%;
+  }
+}
+.input-50{
+  float: left;
+  width: 50%;
+  &.margin-input{
+    margin-right: 2%;
+    width: 48%;
+  }
+}
+.input-25{
+  float: left;
+  width: 25%;
+  &.margin-input{
+    margin-right: 2%;
+    width: 23%;
+  }
+}

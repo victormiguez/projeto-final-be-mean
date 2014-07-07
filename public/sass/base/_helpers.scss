@@ -7,6 +7,16 @@
     height: 0;
     visibility: hidden;
   }
-
   zoom: 1;
+}
+%border-box{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+%trs03{
+  @include transition(0.3s);
+}
+%trs05{
+  @include transition(0.5s);
 }

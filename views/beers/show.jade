@@ -1,20 +1,18 @@
-ul
-  h4 {{ cerveja.name }}
+h4(class='bordered-title') {{ cerveja.name }}
+ul(class='block-list')
   li
-    | Name: {{ cerveja.name }}
+    | Nome: {{ cerveja.name }}
   li
-    | Category: {{ cerveja.category }}
+    | Categoria: {{ cerveja.category }}
   li
-    | Alcohol: {{ cerveja.alcohol }}
+    | Álcool: {{ cerveja.alcohol }}
   li
-    | Price: {{ cerveja.price }}
+    | Preço: {{ cerveja.price }}
   li
-    | Description: {{ cerveja.description }}
+    | Descrição: {{ cerveja.description }}
 
-
-p
-  a(data-ng-href='beers/{{cerveja._id}}/edit')
+div(class='btn-wrapper')
+  a(class='btn' data-ng-href='beers/details/{{cerveja._id}}/edit')
     | Alterar
-p 
-  a(data-ng-href='beers/{{cerveja._id}}/remove')
+  button(class='btn' data-ng-click='remove(cerveja)')
     | Excluir

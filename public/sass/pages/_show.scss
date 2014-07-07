@@ -1,0 +1,24 @@
+.bordered-title{
+  background: url("../img/border-title.gif") center no-repeat;
+  font-size: 30px;
+  font-weight: 300;
+  height: 51px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.block-list{
+  padding: 0;
+  li{
+    border-left: 4px solid #f1c40f;
+    display: block;
+    background:#fff;
+    text-align: center;
+    line-height: 21px;
+    padding: 10px;
+    margin-bottom: 5px;
+    // &:nth-child(odd){
+    //   background:#000;
+    // }
+  }
+}

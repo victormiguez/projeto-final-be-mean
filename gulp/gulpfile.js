@@ -1,6 +1,8 @@
 var gulp    = require('gulp'),
     compass = require('gulp-compass'),
     refresh = require('gulp-livereload'),
+    browserify = require('gulp-browserify'),
+    concat = require('gulp-concat'),
     server  = require('tiny-lr')();
 
 gulp.task('compass', function() {
@@ -21,11 +23,21 @@ gulp.task('jade', function (){
         .pipe(refresh(server));
 })
 
+gulp.task('browserify', function() {
+  gulp.src(['../public/js/controllers.js'])
+  .pipe(browserify({
+    insertGlobals: true,
+    debug: true
+  }))
+  .pipe(concat('controllers.js'))
+  .pipe(gulp.dest('../public/js/dist'));
+});
 
 gulp.task('watch', function() {
     server.listen(35729, function(err) {
         if (err) { return console.log(err); }
         gulp.watch('../public/sass/**/*.scss', ['compass']);
+        gulp.watch('../public/js/controllers.js', ['browserify']);
         gulp.watch('../views/**/*.jade', ['jade']);
     });
 });

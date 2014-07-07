@@ -1,16 +1,12 @@
-h4 Listagem das Lojas
-table.container-small
-  thead
-    tr
-      th 
-        a.order(data-ng-click='orderBy(\'name\')') Nome
-      th
-        a.order(data-ng-click='orderBy(\'category\')') Bairro
-  tbody
-    tr(data-ng-repeat='loja in lojas | orderBy:predicate:reverse')
-      td 
-        a(data-ng-href='/shops/{{loja._id}}')
-          {{ loja.name }}
-      td 
-        a(data-ng-href='/shops/{{loja._id}}')
-          {{ loja.address.bairro }}
+h1(class='full-bordered-title')
+  | Últimas lojas cadastradas
+button(data-ng-click='orderBy(\'name\')') Nome
+br
+button(data-ng-click='orderBy(\'category\')') Bairro
+ul(class='beer-list')
+  li(data-ng-repeat='loja in lojas | orderBy:predicate:reverse')
+    img(src='http://placehold.it/175x150', alt='')
+    a(href='shops/{{ loja._id }}')
+      |{{ loja.name }}
+      br
+      |{{ loja.category }}
