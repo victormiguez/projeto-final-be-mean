@@ -22,3 +22,4 @@ app.controller('ShopsShowCtrl', ['$scope', '$http', '$routeParams', '$location',
 app.controller('ShopsEditCtrl', ['$scope', '$http', '$routeParams', shopCtrl.edit]);
 
 app.controller('UsersCreateCtrl', ['$scope', '$http', userCtrl.create]);
+app.controller('UsersLoginCtrl', ['$scope', '$http', userCtrl.login]);

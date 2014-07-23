@@ -2,7 +2,6 @@
 /**
  * Module dependencies
  */
-
 var express = require('express'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
@@ -53,11 +52,7 @@ if (env === 'production') {
 app.get('/', routes.index);
 app.get('/expose/:dir/:name', routes.expose);
 
-// JSON API
-
-// API REST
 var api = {};
-// requisitando nosso controller
 api.beer = require('./controllers/api/beer');
 app.get('/api/beers', api.beer.retrieve);
 app.get('/api/beers/:id', api.beer.findOne);
@@ -80,35 +75,46 @@ app.post('/api/users', api.user.create);
 app.put('/api/users/:id', api.user.update);
 app.delete('/api/users/:id', api.user.delete);
 
-api.auth = require('./controllers/passport.js');
-app.post('/api/users/login',
-  passport.authenticate('local'),
+// api.auth = require('./controllers/passport.js');
+
+
+
+
+
+
+var mongoose = require('mongoose'),
+    passport = require('passport'),
+    localStrategy = require('passport-local').Strategy,
+    UserSchema = require('./models/user');
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+
+
+passport.use(new localStrategy(
+  function(username, password, done) {
+   
+    process.nextTick(function () {
+    UserSchema.findOne({'username':username},
+    function(err, user) {
+      if (err) { return done(err); }
+      if (!user) { return done(null, false); }
+      if (user.password != password) { return done(null, false); }
+      return done(null, user);
+    });
+    });
+  }
+));
+
+app.post('/api/users/login',passport.authenticate('local'),
   function(req, res, user) {
-    res.redirect('/');
+    res.send('Foi');
   });
-
-
-// app.post('/api/users/login', passport.authenticate('local', {
-//     successRedirect: '/loginSuccess',
-//     failureRedirect: '/loginFailure'
-// }));
-
-
-// app.get('/loginFailure' , function(req, res, next){
-//   res.send('Failure to authenticate');
-// });
-
-// app.get('/loginSuccess', function(req, res) {
-//   console.log('Success');
-//   var teste = res.user;
-//   console.log(teste);
-//     // res.render('./views/index.jade', { username: req.user.username });
-// });
-
-
-
-
-
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
