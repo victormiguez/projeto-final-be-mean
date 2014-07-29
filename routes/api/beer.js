@@ -6,7 +6,7 @@ router.get('/', beer.retrieve);
 
 router.get('/:id', beer.findOne);
 
-router.get('/busca/:name', beer.search);
+router.get('/beers/search/:name', beer.search);
 
 router.post('/', beer.create);
 

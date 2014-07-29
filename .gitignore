@@ -7,3 +7,4 @@ gulp/.sass-cache/*
 bower_components
 bower_components/
 bower_components/*
+.sass-cache

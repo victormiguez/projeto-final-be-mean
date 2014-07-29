@@ -32,7 +32,7 @@ html(ng-app="myApp")
         a(href='/signup', class='btn-link') Criar Conta
         button(class='btn btn-small' id='account-button') Minha Conta
 
-        div(class='user-login-form-wrapper active')
+        div(class='user-login-form-wrapper')
           //- form(method='post', action='/api/users/login/')
           form(data-ng-controller='UsersLoginCtrl', data-ng-submit='auth(form)')
             fieldset

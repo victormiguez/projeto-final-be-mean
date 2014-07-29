@@ -46,7 +46,6 @@ var beersCtrl = {
     $scope.busca = 'Skol';
 
     $scope.search = function(busca){
-
       var buscaParam = url+busca;
       // console.log($scope.busca);
 
@@ -56,7 +55,7 @@ var beersCtrl = {
       .success(function(data){
         $scope.cervejas = data;
         console.log('Cervejas', $scope.cervejas);
-        $location.path('/beers/search');
+        $location.search('/beers/search/' + busca);
       });
     }
   },
