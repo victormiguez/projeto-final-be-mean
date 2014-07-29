@@ -1,9 +1,14 @@
-var gulp    = require('gulp'),
-    compass = require('gulp-compass'),
-    refresh = require('gulp-livereload'),
+var gulp       = require('gulp'),
+    compass    = require('gulp-compass'),
     browserify = require('gulp-browserify'),
-    concat = require('gulp-concat'),
-    server  = require('tiny-lr')();
+    concat     = require('gulp-concat'),
+    browserSync = require('browser-sync'),
+    nodemon     = require('gulp-nodemon');
+
+
+gulp.task('server', function () {
+  nodemon({ script: '../app.js', ext: 'js'})
+});
 
 gulp.task('compass', function() {
     gulp.src('../public/sass/*.scss')
@@ -18,11 +23,6 @@ gulp.task('compass', function() {
         .pipe(refresh(server));
 });
 
-gulp.task('jade', function (){
-    gulp.src('../views/**/*.jade')
-        .pipe(refresh(server));
-})
-
 gulp.task('browserify', function() {
   gulp.src(['../public/js/controllers.js'])
   .pipe(browserify({
@@ -33,11 +33,22 @@ gulp.task('browserify', function() {
   .pipe(gulp.dest('../public/js/dist'));
 });
 
-gulp.task('watch', function() {
-    server.listen(35729, function(err) {
-        if (err) { return console.log(err); }
-        gulp.watch('../public/sass/**/*.scss', ['compass']);
-        gulp.watch(['../public/js/controllers.js', '../public/js/controllers/*.js'], ['browserify']);
-        gulp.watch('../views/**/*.jade', ['jade']);
-    });
+gulp.task('b-s', function() {
+  browserSync.init(['../views/**/*.jade','../public/css'], {
+    proxy: 'localhost:3333'
+  });
 });
+
+gulp.task('default', ['b-s', 'server', 'compass'], function(){
+  gulp.watch('../public/sass/**/*.scss', ['compass']);
+  gulp.watch(['../public/js/controllers.js', '../public/js/controllers/*.js'], ['browserify']);
+})
+
+
+// gulp.task('watch', function() {
+//         if (err) { return console.log(err); }
+//         gulp.watch('../public/sass/**/*.scss', ['compass']);
+//         gulp.watch(['../public/js/controllers.js', '../public/js/controllers/*.js'], ['browserify']);
+//         gulp.watch('../views/**/*.jade', ['jade']);
+//     });
+// });
