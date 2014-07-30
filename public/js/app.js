@@ -31,7 +31,7 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'expose/beers/edit',
       controller: 'BeersEditCtrl'
     }).
-    when('/beers/search/?', {
+    when('/beers/search/', {
       templateUrl: 'expose/beers/search',
       controller: 'BeersSearchCtrl'
     }).

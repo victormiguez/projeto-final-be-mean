@@ -7,7 +7,7 @@ var gulp        = require('gulp'),
 
 
 gulp.task('server', function () {
-  nodemon({ script: './app.js', ext: 'jade js'})
+  nodemon({ script: './app.js', ext: 'js'})
 });
 
 gulp.task('compass', function() {
